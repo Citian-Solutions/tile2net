@@ -339,6 +339,12 @@ class SpringHillTN(ArcGis):
     name = 'sh_tn'
     keyword = 'Spring Hill'
 
+class DouglasCountyNebraska(ArcGis):
+    server = 'https://tiles.arcgis.com/tiles/pDAi2YK0L0QxVJHj/arcgis/rest/services/2020_Douglas_County_Imagery/MapServer'
+    name = 'DouglasCounty'
+    keyword = 'douglas'
+    zoom = 21
+
 
 if __name__ == '__main__':
     from tile2net import Raster
@@ -353,4 +359,5 @@ if __name__ == '__main__':
     assert Raster(location='Jersey City', zoom=19).source == 'nj'
     assert Raster(location='Hoboken', zoom=19).source == 'nj'
     assert Raster(location="Spring Hill, TN", zoom=20).source == "sh_tn"
+    assert Raster(location="Douglas County, Nebraska", zoom=21).source == "douglas"
 
